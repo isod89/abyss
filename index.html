@@ -7,13 +7,18 @@
 <meta name="description" content="ABYSS composes endless ambient music in your browser (cinematic, cosmic, dark) and you sculpt it. Help build its sound bank for the FM-1.">
 <meta property="og:title" content="ABYSS · ambient that writes itself">
 <meta property="og:description" content="Endless generative ambient: cinematic, cosmic, dark. It plays on its own; you sculpt it. Build ABYSS's sound bank and send it in.">
-<link rel="stylesheet" href="css/abyss.css">
-<link rel="icon" href="assets/abyss-mark.svg">
+<link rel="stylesheet" href="css/abyss.css?v=2">
+<link rel="icon" type="image/svg+xml" href="assets/abyss-icon.svg?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/abyss-icon-32.png?v=2">
+<link rel="apple-touch-icon" href="assets/abyss-icon-180.png?v=2">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#01040a">
+<meta property="og:image" content="assets/abyss-icon-512.png">
 </head>
 <body data-world="CINEMATIC">
 <canvas id="deep"></canvas>
 <header class="top">
-  <img class="logo" src="assets/abyss-logo.svg" alt="ABYSS">
+  <img class="logo" src="assets/abyss-logo-h.svg?v=2" alt="ABYSS">
   <button id="play" class="play" aria-label="Play" title="Play / stop (space bar)"><span>▶</span></button>
   <div class="now">
     <b id="label">press ▶ and let it play</b>
@@ -103,7 +108,7 @@
 <div id="toast" class="toast"></div>
 <div id="helpbox" class="helpbox" hidden>
   <div class="helpcard">
-    <img src="assets/abyss-logo.svg" alt="ABYSS">
+    <img src="assets/abyss-logo-h.svg?v=2" alt="ABYSS">
     <h2>How to play</h2>
     <ol>
       <li><b>▶ Play.</b> ABYSS composes endless ambient music: pieces of 6 to 15 minutes that flow into each other, each built toward one peak. Pick a <b>world</b>: cinematic, cosmic or dark.</li>
@@ -119,7 +124,7 @@
   </div>
 </div>
 <div id="showinfo" class="showinfo"><b id="s-sec">—</b><span id="s-label"></span><small>click or Esc to go back</small></div>
-<div id="loading" class="loading"><img src="assets/abyss-logo.svg" alt=""><progress id="loadbar" max="100" value="0"></progress><small>loading the sound engines…</small></div>
-<script type="module" src="js/app.js"></script>
+<div id="loading" class="loading"><img src="assets/abyss-logo-h.svg?v=2" alt=""><progress id="loadbar" max="100" value="0"></progress><small>loading the sound engines…</small></div>
+<script type="module" src="js/app.js?v=2"></script>
 </body>
 </html>

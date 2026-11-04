@@ -220,7 +220,8 @@ class Abyss extends AudioWorkletProcessor {
     this.subLvl = b.w_lvl(7) / 1000;
     for (let L = 1; L < 7; L++) this.fl[LAYERS[L]].c = b.w_cut(L) >= 0 ? b.w_cut(L) : this.fl[LAYERS[L]].c;
     this.gainT = b.w_ev(0) / 1000; this.verbAmt = b.w_ev(1) / 1000; this.lpT = b.w_ev(2) / 1000;
-    this.hissT = (b.w_ev(3) + (this.tape ? 250 : 0)) / 1000; this.windT = b.w_ev(4) / 1000; this.windFT = b.w_ev(5) / 1000; this.rumT = b.w_ev(6) / 1000; this.subAm = b.w_ev(7);
+    this.hissT = (b.w_ev(3) + (this.tape ? 250 * b.w_ev(23) / 1000 : 0)) / 1000; this.windT = b.w_ev(4) / 1000; this.windFT = b.w_ev(5) / 1000; this.rumT = b.w_ev(6) / 1000; this.subAm = b.w_ev(7);
+    // (TAPE's extra hiss follows the music too: w_ev(23), the textures' share, never alone)
     const cents = Math.round(b.w_ev(8) * 100 / 4096 * (this.tape ? 2 : 1));
     if (cents !== this.drift) { this.drift = cents; for (const L in this.inst) this.inst[L].w.k_global(3, cents); }
     const F = FXW[w]; this.verb.set(F.rt * (0.5 + 0.5 * this.mSpace) * (this.shimmer ? 1.3 : 1), F.damp, F.pre);

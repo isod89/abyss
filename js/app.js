@@ -95,7 +95,7 @@ async function sendPalette() {
 async function start() {
   if (ctx) { if (ctx.state !== 'running') await ctx.resume(); return; }
   ctx = new AudioContext({ sampleRate: 44100, latencyHint: 'playback' });
-  await ctx.audioWorklet.addModule('js/worklet.js');
+  await ctx.audioWorklet.addModule('js/worklet.js?v=2');
   node = new AudioWorkletNode(ctx, 'abyss', { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2], processorOptions: { modules: mods } });
   node.connect(ctx.destination);
   node.port.onmessage = (e) => {

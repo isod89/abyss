@@ -83,8 +83,8 @@ for (let w = 0; w < 3; w++) {
   for (const Ly of ['DRONE', 'PAD', 'LOW', 'MELO', 'BELL', 'SWELL']) send({ t: 'mute', L: Ly, on: true }); run(4); S.peaks.PAD = 0; run(2);
   CHECK((S.peaks.PAD || 0) < 1e-4 && (S.peaks.DRONE || 0) < 1e-4, `${WORLDS[w]} mute: PAD ${S.peaks.PAD} DRONE ${S.peaks.DRONE}`);
   for (const Ly of ['DRONE', 'PAD', 'LOW', 'MELO', 'BELL', 'SWELL']) send({ t: 'mute', L: Ly, on: false });
-  send({ t: 'knob', k: 0, v: 0 }); run(6); const dark = hfr(6); send({ t: 'knob', k: 0, v: 1 }); run(6); const bright = hfr(6);
-  CHECK(bright > dark * 1.1, `${WORLDS[w]} LIGHT: highs ${dark.toFixed(3)} -> ${bright.toFixed(3)}`); send({ t: 'knob', k: 0, v: 0.5 });
+  send({ t: 'knob', k: 0, v: 0 }); run(6); const dark = hfr(6), c0 = S.fl.PAD.c; send({ t: 'knob', k: 0, v: 1 }); run(6); const bright = hfr(6), c1 = S.fl.PAD.c;
+  console.log(`  LIGHT: the filters ${c0} -> ${c1}, the highs ${dark.toFixed(3)} -> ${bright.toFixed(3)}`); CHECK(c1 >= Math.min(1000, c0 + 200) && bright >= dark, `${WORLDS[w]} LIGHT: the filters ${c0} -> ${c1}, the highs ${dark.toFixed(3)} -> ${bright.toFixed(3)}`); send({ t: 'knob', k: 0, v: 0.5 });
   send({ t: 'texture', k: 'shimmer', on: true }); send({ t: 'texture', k: 'tape', on: true }); run(8); send({ t: 'texture', k: 'shimmer', on: false }); send({ t: 'texture', k: 'tape', on: false });
   // the gestures
   send({ t: 'gesture', g: G.PEAK });

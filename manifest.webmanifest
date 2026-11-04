@@ -1,0 +1,14 @@
+{
+ "name": "ABYSS · ambient that writes itself",
+ "short_name": "ABYSS",
+ "description": "Endless generative ambient (cinematic, cosmic, dark) that you sculpt. The web version of ABYSS for the FM-1.",
+ "start_url": "./",
+ "display": "standalone",
+ "background_color": "#01040a",
+ "theme_color": "#01040a",
+ "icons": [
+  { "src": "assets/abyss-icon-192.png", "sizes": "192x192", "type": "image/png" },
+  { "src": "assets/abyss-icon-512.png", "sizes": "512x512", "type": "image/png" },
+  { "src": "assets/abyss-icon.svg", "sizes": "any", "type": "image/svg+xml" }
+ ]
+}
