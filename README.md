@@ -1,5 +1,7 @@
 # ABYSS · ambient that writes itself
 
+TRY HERE : https://isod89.github.io/abyss/
+
 ABYSS composes endless ambient music in real time, and you sculpt it while it plays.
 
 **Play it in your browser:** open this repository's GitHub Pages site (Chrome or Edge on a computer works best;
