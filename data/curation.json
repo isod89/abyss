@@ -1,0 +1,223 @@
+{
+ "CINEMATIC": {
+  "DRONE": [
+   "STRINGS:LOW STR",
+   "STRINGS:DARK ENS",
+   "WHEEL:CHAPEL",
+   "VECTOR:ORGAN DRIFT",
+   "ANALOG:DARK STR",
+   "ghoulbox/STRINGS & REEDS:STRING MACH",
+   "melodee/PROPHET:LOW STRINGS",
+   "ghoulbox/FM6 DUNGEON:DARK STRINGS"
+  ],
+  "PAD": [
+   "STRINGS:SLOW STR",
+   "STRINGS:ENSEMBLE",
+   "STRINGS:TAPE STR",
+   "JUNO:JUNO STRINGS",
+   "VECTOR:STRING VS",
+   "ANALOG:WARM PAD",
+   "melodee/PROPHET:REVERBERANT STRING",
+   "melodee/PROPHET:OLD STRING MACHINE",
+   "ghoulbox/PADS & HORNS:FROST STR",
+   "melodee/CZ-1:STRINGS 2",
+   "obervave/OBERVAVE:PWM STRING",
+   "mutable/VELVET KEYS:KEYS STILLNESS"
+  ],
+  "LOW": [
+   "STRINGS:CELLOS",
+   "STRINGS:LOW STR",
+   "JUNO:SUB BASS 106",
+   "ghoulbox/FM6 DUNGEON:DARK STRINGS",
+   "ghoulbox/STRINGS & REEDS:MOURN HORN",
+   "mutable/ROUND BASS:VELVET DUSK"
+  ],
+  "MELO": [
+   "PHYS:VIOLIN BOW",
+   "PHYS:CELLO BOW",
+   "STRINGS:VIOLINS",
+   "SAMPLE:AIR FLUTE",
+   "WHEEL:SOFT FLUTE",
+   "VOICE:AAH LEAD",
+   "ghoulbox/FM6 DUNGEON:LOFI FLUTE",
+   "ghoulbox/RECORDINGS:TENOR RECORD",
+   "obervave/OBERVAVE:SOFT FLUTE",
+   "ghoulbox/ORGANS:TOWER FLUTE"
+  ],
+  "BELL": [
+   "DIGITAL:FM GRAND",
+   "DIGITAL:CELESTA",
+   "DIGITAL:HARP",
+   "DIGITAL:MUSIC BOX",
+   "PHYS:PHYS HARP",
+   "frodhes/RHODES:DREAM",
+   "frodhes/RHODES:EARLY FELT",
+   "fimba/KALIMBA:BRONZE BELLS",
+   "frodhes/VIBES:VIBES",
+   "ghoulbox/PLUCKED:DUNGEON HARP"
+  ],
+  "SWELL": [
+   "VOICE:CHOIR AAH",
+   "VOICE:MALE CHOIR",
+   "VECTOR:CHOIR VS",
+   "SAMPLE:SAMPLE CHOIR",
+   "FMX:FMX BRASS",
+   "WHEEL:FULL ORGAN",
+   "ghoulbox/CHOIRS:MONKS",
+   "ghoulbox/FM6 DUNGEON:GLASS CHOIR",
+   "mutable/SINE CHOIR:SLOW HALO",
+   "ghoulbox/FM6 DUNGEON:FRENCH HORN",
+   "ghoulbox/RECORDINGS:REN ORGAN"
+  ]
+ },
+ "COSMIC": {
+  "DRONE": [
+   "VECTOR:SPACE DRONE",
+   "HYBRID:DRONE",
+   "TERRAIN:FOLD DRONE",
+   "ANALOG:ATMOS PAD",
+   "GRAIN:FROZEN PAD",
+   "tonitor/BAYAREA:DRONE 1",
+   "tonitor/HIVE:DRONE 1",
+   "obervave/OBERVAVE:SPACEDRONE",
+   "mutable/PLAITS HARMONIC:DEEP SPECTRUM",
+   "tonitor/HIVE:GROUND 1"
+  ],
+  "PAD": [
+   "JUNO:DREAM PAD",
+   "ANALOG:ATMOS PAD",
+   "HYBRID:GLASS PAD",
+   "DIGITAL:GLASS PAD",
+   "GRAIN:ANGEL HALO",
+   "VECTOR:VS PAD",
+   "MACRO:SUS PAD",
+   "TERRAIN:RIPPLE PAD",
+   "WAVE:PPG PAD",
+   "mutable/SPECTRAL BLOOM:BLOOM HONEY",
+   "mutable/MELLOW DRIFT:MELLOW WILLOW",
+   "melodee/PROPHET:UNICORN DREAMS",
+   "obervave/OBERVAVE:SLOW SWEEP",
+   "tonitor/BAYAREA:SWELL 1",
+   "mutable/PLAITS HARMONIC:BRONZE BLOOM",
+   "melodee/PROPHET:HOLLOW DREAMS"
+  ],
+  "LOW": [
+   "ANALOG:MINI BASS",
+   "ANALOG:TAURUS",
+   "PHASE:CZ BASS",
+   "ANALOG:MONO BASS",
+   "JUNO:SUB BASS 106",
+   "mutable/ROUND BASS:VELVET LAGOON",
+   "obervave/OBERVAVE:NIGHTDRIVE",
+   "mutable/SATIN MORPH:CEDAR BASS"
+  ],
+  "MELO": [
+   "ANALOG:PWM LEAD",
+   "ANALOG:PROPH LEAD",
+   "VOICE:AAH LEAD",
+   "ANALOG:PAN FLUTE",
+   "JUNO:SAW LEAD 106",
+   "VPS:VPS LEAD",
+   "obervave/OBERVAVE:FIFTHS LD",
+   "obervave/OBERVAVE:SOLO LEAD",
+   "mutable/SATIN MORPH:HOLLOW REED",
+   "tonitor/ANIMA:VOYAGE 1"
+  ],
+  "BELL": [
+   "DIGITAL:GLOCKEN",
+   "DIGITAL:CELESTA",
+   "PHASE:CZ BELLS",
+   "HYBRID:PLUCK",
+   "ANALOG:SQR PLUCK",
+   "melodee/PROPHET:ANTIQUE BELL",
+   "fimba/KALIMBA:GLASS TINES",
+   "fimba/KALIMBA:SHIMMER GLASS",
+   "obervave/OBERVAVE:ICE BELLS",
+   "frodhes/RHODES:GLASS BELL"
+  ],
+  "SWELL": [
+   "VECTOR:CHOIR VS",
+   "GRAIN:ANGEL HALO",
+   "VPS:VPS CHOIR",
+   "JUNO:JUNO BRASS",
+   "mutable/SINE CHOIR:WARM MEADOW",
+   "tonitor/ANIMA:GOLDEN 1",
+   "melodee/PROPHET:TAARICHOIR",
+   "obervave/OBERVAVE:AIR CHOIR",
+   "ghoulbox/CHIP WINDS:CASIO CHOIR"
+  ]
+ },
+ "DARK": {
+  "DRONE": [
+   "GRAIN:DARK DRONE",
+   "HYBRID:DRONE",
+   "TERRAIN:FOLD DRONE",
+   "STRINGS:DARK ENS",
+   "VECTOR:SPACE DRONE",
+   "ghoulbox/CHOIRS:LOW DRONE",
+   "tonitor/CALIGULA:UNDERTOW 1",
+   "tonitor/FM OBJECTS:ABYSS 1",
+   "tonitor/CALIGULA:SPORE 2",
+   "ghoulbox/CAVE:CAVE WIND",
+   "melodee/PROPHET:METAL DRONESPACE"
+  ],
+  "PAD": [
+   "HYBRID:DARK PAD",
+   "STRINGS:DARK ENS",
+   "ANALOG:DARK STR",
+   "GRAIN:WIND CHOIR",
+   "VOICE:MALE CHOIR",
+   "TERRAIN:TERRAIN",
+   "ghoulbox/PADS & HORNS:CRYPT PAD",
+   "tonitor/CALIGULA:VEIL 2",
+   "obervave/OBERVAVE:GHOST PAD",
+   "obervave/OBERVAVE:DARK PAD",
+   "melodee/PROPHET:80S HORROR STRINGS",
+   "tonitor/HIVE:WASH 1"
+  ],
+  "LOW": [
+   "WHEEL:REED ORGAN",
+   "VECTOR:ORGAN DRIFT",
+   "STRINGS:LOW STR",
+   "TERRAIN:FOLD DRONE",
+   "ghoulbox/PADS & HORNS:DIRGE BASS",
+   "tonitor/HIVE:SUB 1",
+   "tonitor/FM OBJECTS:TIDE 1"
+  ],
+  "MELO": [
+   "VOICE:MALE CHOIR",
+   "PHYS:CELLO BOW",
+   "ANALOG:SYN BRASS",
+   "FMX:FMX BRASS",
+   "VOICE:WHISPER",
+   "ghoulbox/CHOIRS:WRAITH",
+   "ghoulbox/STRINGS & REEDS:MOURN HORN",
+   "tonitor/CALIGULA:LITANY 1",
+   "ghoulbox/GURDY:DRONE WHEEL"
+  ],
+  "BELL": [
+   "PHYS:BIG BELL",
+   "PHYS:GLASS BOWL",
+   "DIGITAL:TUBE BELL",
+   "DIGITAL:CHURCH BEL",
+   "HYBRID:METAL",
+   "melodee/PROPHET:CLANGOROUS BELLS",
+   "melodee/PROPHET:OMINOUS BELLFALL",
+   "tonitor/FM OBJECTS:METAL 1",
+   "tonitor/HIVE:METAL 2",
+   "fimba/KALIMBA:DARK KALIMBA"
+  ],
+  "SWELL": [
+   "WHEEL:DIRTY B3",
+   "WHEEL:FULL ORGAN",
+   "NOISE:RADIO",
+   "NOISE:WHOOSH",
+   "GRAIN:VOX CLOUD",
+   "ghoulbox/CHOIRS:CRYPT CHOIR",
+   "ghoulbox/ORGANS:CATHEDRAL",
+   "ghoulbox/FM6 DUNGEON:PIPE ORGAN",
+   "tonitor/FM OBJECTS:REVERSE 1",
+   "tonitor/CALIGULA:CARRION 1"
+  ]
+ }
+}

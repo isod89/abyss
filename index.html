@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABYSS · ambient that writes itself</title>
+<meta name="description" content="ABYSS composes endless ambient music in your browser (cinematic, cosmic, dark) and you sculpt it. Help build its sound bank for the FM-1.">
+<meta property="og:title" content="ABYSS · ambient that writes itself">
+<meta property="og:description" content="Endless generative ambient: cinematic, cosmic, dark. It plays on its own; you sculpt it. Build ABYSS's sound bank and send it in.">
+<link rel="stylesheet" href="css/abyss.css">
+<link rel="icon" href="assets/abyss-mark.svg">
+</head>
+<body data-world="CINEMATIC">
+<canvas id="deep"></canvas>
+<header class="top">
+  <img class="logo" src="assets/abyss-logo.svg" alt="ABYSS">
+  <button id="play" class="play" aria-label="Play" title="Play / stop (space bar)"><span>▶</span></button>
+  <div class="now">
+    <b id="label">press ▶ and let it play</b>
+    <span id="where">ABYSS writes the music, you sculpt it</span>
+  </div>
+  <div class="keybox" title="The key and the mode"><b id="key">—</b><small id="mode">KEY</small></div>
+  <div class="keybox chordbox" title="The chord"><b id="chord">—</b><small>CHORD</small></div>
+  <div class="bpm" title="The tempo (ABYSS's clock: most pieces have no beat)"><b id="bpm">—</b><small>BPM</small></div>
+  <nav class="tabs"><button data-tab="play" class="on">Play</button><button data-tab="atelier">Sound lab</button><button data-tab="set">The set</button></nav>
+  <button id="show" class="btn ghost" title="Full screen: just the deep and the music (F key)">Show</button>
+  <button id="help" class="round" title="How to play">?</button>
+</header>
+<div class="planbar">
+  <div id="plan" class="plan"></div>
+  <div class="planinfo"><b id="sec">—</b><span id="secinfo"></span><em id="next"></em></div>
+</div>
+<main>
+  <section id="tab-play" class="panel on">
+    <div class="callout"><b>Help build ABYSS's sound bank.</b> <span>Which strings, choirs, drones and bells each world uses is the biggest job left before ABYSS ships on the FM-1. Make your own bank and send it in.</span><button class="btn big" data-go="atelier">Open the sound lab</button></div>
+    <div class="deck">
+      <div class="card worldcard">
+        <h3>The world <small>while playing: it comes with the next piece · click again: now</small></h3>
+        <div id="worlds" class="worlds"></div>
+        <div class="row seedrow">
+          <span id="kind" class="kind"></span>
+          <span class="sp"></span>
+          <small class="note">Seed</small><input id="seed" class="seed" spellcheck="false" title="The same seed plays the same pieces again">
+          <button id="newseed" class="btn" title="A new set">New</button><button id="copyseed" class="btn ghost" title="Copy the world and the seed">Copy</button>
+        </div>
+      </div>
+      <div class="card hands">
+        <h3>The hands <small>drag up / down · double-click: reset</small></h3>
+        <div id="knobs" class="bigknobs"></div>
+        <div class="row textures"><span class="note">Textures</span><button id="tx-shimmer" class="tog" title="The reverb an octave up: a halo over everything">SHIMMER</button><button id="tx-tape" class="tog" title="Tape hiss and wow: an old recording">TAPE</button></div>
+      </div>
+      <div class="card gestures">
+        <h3>The gestures <small>ABYSS answers in its own time: a gesture glows until it happens</small></h3>
+        <div id="pads" class="pads"></div>
+      </div>
+      <div class="card mixer">
+        <h3>The layers <small>‹ › another sound (it stays) · ↻ another by chance · ◆ keep it in the next pieces · M mute</small></h3>
+        <div id="strips" class="strips"></div>
+      </div>
+    </div>
+  </section>
+  <section id="tab-atelier" class="panel">
+    <div class="labgrid">
+      <div class="card">
+        <h3>The sound lab</h3>
+        <p class="note">ABYSS picks each piece's sounds from its <b>sound bank</b>: for each world, a short list of sounds per layer (drone, pad, low, melody, bells, swell). Picking that bank is the biggest job left before ABYSS ships on the FM-1, and your ears can help.</p>
+        <ol class="steps">
+          <li><b>Pick a world</b> below.</li>
+          <li><b>Listen</b> to each sound (▶) as its layer plays it, <b>remove</b> what doesn't fit (×), <b>add</b> what's missing (+ add a sound).</li>
+          <li><b>Try it:</b> go to <a href="#" data-go="play">Play</a> and press ▶. ABYSS now picks from your bank (‹ › on a layer goes through its sounds).</li>
+          <li><b>Send it</b> to me with the button on the right. Your bank is saved in this browser, so you can come back to it.</li>
+        </ol>
+        <div class="row"><div id="a-worlds" class="chips"></div></div>
+        <div class="row"><span id="count" class="note"></span><span class="sp"></span><label class="chk"><input type="checkbox" id="community"> include community sound packs</label><button id="resetcur" class="btn ghost" title="Back to ABYSS's own bank (your changes are lost)">Back to ABYSS's bank</button></div>
+        <p class="note small">ABYSS balances the sounds of its own bank automatically, community sounds included. A sound you add plays at its raw level for now: judge the sound, not how loud it is.</p>
+        <div id="atelier"></div>
+      </div>
+      <div class="card sendcard">
+        <h3>Send your bank</h3>
+        <label class="field">Your name or nickname<input id="lab-name" maxlength="40" placeholder="optional"></label>
+        <label class="field">Notes<textarea id="lab-notes" rows="5" maxlength="1500" placeholder="What did you change and why? Which world did you work on?"></textarea></label>
+        <button id="lab-mail" class="btn big wide">Send my bank</button>
+        <p id="lab-sent" class="sent" hidden></p>
+        <p id="lab-err" class="note small err" hidden></p>
+        <p class="note small">Sends your bank, your name and your notes straight to <b>sodwavecontact@gmail.com</b>. No email app, no attachment. You can send again after more changes.</p>
+        <div class="row"><button id="export" class="btn">Download (.json)</button><button id="lab-copy" class="btn ghost">Copy as text</button><span class="sp"></span><button id="lab-load" class="btn ghost" title="Open a bank file (yours or someone else's)">Load a bank…</button><button id="lab-paste" class="btn ghost" title="Paste a bank's text">Paste…</button><input id="lab-file" type="file" accept=".json,application/json" hidden></div>
+        <h4 class="minih">Your changes from ABYSS's bank</h4>
+        <pre id="lab-changes" class="changes"></pre>
+      </div>
+    </div>
+  </section>
+  <section id="tab-set" class="panel">
+    <div class="card wide"><h3>The set</h3><p class="note">Every piece played, with its seed: type a seed back in (in the same world) to hear that set again.</p><ol id="setlog" class="setlog"></ol></div>
+    <div class="card wide about">
+      <h3>Where its rules come from</h3>
+      <p class="note">ABYSS builds each piece toward one moment, at about two-thirds of its length: what research on musical chills (Sloboda; Grewe; Guhn; Bannister &amp; Eerola) found gives people shivers. A long rise, a breath of near-silence just before, a new voice entering, one unexpected chord, an appoggiatura on the highest note, the register opening at both ends, the theme coming back.</p>
+      <p class="note"><b>Cinematic</b>: 56–72 BPM, the chord loops of modern-classical film music, strings and cello, a felt piano repeating one note across octaves, tape hiss, sometimes a clock. <b>Cosmic</b>: beatless drifts, a Berlin-school sequencer or a slow beat that arrives late; lydian and major, sus and add9 chords; wind; the "lift" (the key moves a third and a new voice enters); the pitch drifting a few cents like an old analog synth. <b>Dark</b>: no pulse; drones a semitone or a tritone apart, a sub that breathes, rumble, distant struck metal, one rise of minutes, rough clusters at the top, then the void and the decay. One dark piece in four is a tape loop played until it falls apart.</p>
+      <p class="note">It is the same brain as on the FM-1, compiled for the browser: a seed plays the same pieces here and on the machine.</p>
+    </div>
+  </section>
+</main>
+<footer class="foot">ABYSS is free software (GPL-3.0) by Sodwave · the sound engines are the FM-1 firmwares' and the community's (see the README) · nothing you do here leaves your browser unless you send it</footer>
+<div id="toast" class="toast"></div>
+<div id="helpbox" class="helpbox" hidden>
+  <div class="helpcard">
+    <img src="assets/abyss-logo.svg" alt="ABYSS">
+    <h2>How to play</h2>
+    <ol>
+      <li><b>▶ Play.</b> ABYSS composes endless ambient music: pieces of 6 to 15 minutes that flow into each other, each built toward one peak. Pick a <b>world</b>: cinematic, cosmic or dark.</li>
+      <li><b>The hands</b>: LIGHT (shadow to light: filters, register, and the harmonies of the next pieces), SPACE (reverb and echo), DENSITY (how much it plays), TIME (slower to faster), TENSION (how rough the peak gets). Drag a knob up or down.</li>
+      <li><b>The gestures</b>: ask for a RISE, the PEAK NOW, CALM, a BREATH, a LIFT, a new theme or harmony, HOLD this section, the VOID, the NEXT PIECE, or FADE out. ABYSS answers in its own time.</li>
+      <li><b>The layers</b>: every layer has its volume, filter and space, ‹ › to change its sound, ↻ for another by chance, ◆ to keep it, M to mute.</li>
+      <li><b>Textures</b>: SHIMMER (the reverb an octave up) and TAPE (hiss and wow).</li>
+    </ol>
+    <p class="note">Use headphones or good speakers: a lot happens in the lows. Give it a few minutes; the peak comes after a long rise.</p>
+    <p class="note"><b>Want to help?</b> The <b>Sound lab</b> tab lets you build your own sound bank and send it to me.</p>
+    <p class="note">Keyboard: space = play, F = show mode. Works best in Chrome or Edge on a computer.</p>
+    <button id="helpok" class="btn big">Let's dive</button>
+  </div>
+</div>
+<div id="showinfo" class="showinfo"><b id="s-sec">—</b><span id="s-label"></span><small>click or Esc to go back</small></div>
+<div id="loading" class="loading"><img src="assets/abyss-logo.svg" alt=""><progress id="loadbar" max="100" value="0"></progress><small>loading the sound engines…</small></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
